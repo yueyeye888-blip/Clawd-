@@ -11,12 +11,20 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: "USHomeIP_2443_s8K2mQ7v"
     udp: true
+  - name: HK-HomeIP
+    type: ss
+    server: 103.73.161.253
+    port: 2444
+    cipher: chacha20-ietf-poly1305
+    password: "HKHomeIP_2444_9nT5xQ2p"
+    udp: true
 
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - US-HomeIP
+      - HK-HomeIP
       - DIRECT
 
 rules:
