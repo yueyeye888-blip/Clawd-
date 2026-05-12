@@ -1,0 +1,23 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: US-HomeIP
+    type: ss
+    server: 216.36.112.65
+    port: 2443
+    cipher: chacha20-ietf-poly1305
+    password: "USHomeIP_2443_s8K2mQ7v"
+    udp: true
+
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - US-HomeIP
+      - DIRECT
+
+rules:
+  - MATCH,PROXY
