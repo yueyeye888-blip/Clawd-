@@ -5,11 +5,17 @@ log-level: info
 
 proxies:
   - name: HK-HomeIP
-    type: ss
-    server: 103.73.161.253
-    port: 2444
-    cipher: chacha20-ietf-poly1305
-    password: "HKHomeIP_2444_9nT5xQ2p"
+    type: vless
+    server: annei.top
+    port: 443
+    uuid: 8b7ac12f-4c1a-4db3-9d1a-7c9a5f3e6b21
+    tls: true
+    servername: annei.top
+    network: ws
+    ws-opts:
+      path: /hkws
+      headers:
+        Host: annei.top
     udp: true
 
 proxy-groups:
